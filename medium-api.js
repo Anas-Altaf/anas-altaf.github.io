@@ -38,11 +38,11 @@ function renderMediumArticles() {
         .then(response => response.json())
         .then(data => {
             if (data.status === 'ok' && data.items) {
-                console.log(`Found ${data.items.length} articles for ${mediumUserName}:`);
+                // console.log(`Found ${data.items.length} articles for ${mediumUserName}:`);
 
                 data.items.forEach((article, index) => {
-                    console.log(`\nArticle #${index + 1}:`);
-                    console.log('----------------------------');
+                    // console.log(`\nArticle #${index + 1}:`);
+                    // console.log('----------------------------');
 
                     // Log all article properties
                     idx = index < 10 ? '0' + (index + 1) : index + 1
