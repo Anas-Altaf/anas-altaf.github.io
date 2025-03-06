@@ -30,6 +30,7 @@ function updateScrollProgress(percentage) {
 // Toggle button visibility
 function toggleButtonVisibility() {
     if (window.scrollY > 100) {
+        
         scrollButton.classList.add('visible');
     } else {
         scrollButton.classList.remove('visible');

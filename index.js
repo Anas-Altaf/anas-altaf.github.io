@@ -181,7 +181,7 @@ function getDeviconName(language) {
 // Github Api
 async function getGithubRepos() {
     var githubUser = 'Anas-Altaf'
-    var githubApiLink = `https://api.github.com/users/${githubUser}/repos`
+    var githubApiLink = `https://api.github.com/users/${githubUser}/repos?per_page=100&type=sources`
     var xhr = new XMLHttpRequest();
     xhr.open('GET', githubApiLink, true);
     xhr.send();
@@ -192,7 +192,7 @@ async function getGithubRepos() {
             // Print Repos Data one by one
             data.forEach((repo, idx) => {
                 // Checking if not archived
-                if (!repo.archived && !repo.name.trim().toLowerCase().includes('anas')) {
+                if (!repo.archived && !repo.name.trim().toLowerCase().includes('anas') && !repo.disabled) {
                     var rName = cleanRepoName(repo.name)
                     var rDesc = repo.description == null ? 'More on Github' : repo.description.length > 100 ? repo.description.slice(0, 100) + '...' : repo.description
                     var rCat = getCategory(repo.language)
@@ -216,7 +216,7 @@ async function getGithubRepos() {
 
 
 function repoCard(id, rName, rDesc, rIcon, rCategory, rLink) {
-    console.log(id, rName, rDesc, rIcon, rCategory, rLink)
+    // console.log(id, rName, rDesc, rIcon, rCategory, rLink)
     return `
     <a href="${rLink}" target="_blank">
 <div class="card">
@@ -238,9 +238,9 @@ function setUpProjects() {
     selelctedProjects = [
         {
             pName: 'Neurl-PS Scrapper',
-            desc: 'A robust scrapper for https://nips.papers.cc , it could be ealpful if you are a researcher and data scientist.',
+            desc: 'A robust scrapper for https://nips.papers.cc , it could be helpful if you are a researcher and data scientist or you need to train your LLMs.',
             img: 'assets/images/blog/blog-1.webp',
-            icons: ['github', 'python'],
+            icons: ['python', 'jupyter', 'pandas', 'streamlit', 'git', 'pycharm'],
             category: 'Data Science in AI and ML',
             link: 'https://github.com/Anas-Altaf'
         },
@@ -272,7 +272,7 @@ function setUpProjects() {
                     <div class="project-icons">
                         ${icons.map(icon => {
             // return `<i class="fa-solid fa-${icon} project-icon"></i>`
-            return `<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-original.svg" /> 
+            return `<img title="${cleanRepoName(icon)}" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-original.svg" /> 
 `
         }).join(' ')
             }
@@ -308,7 +308,6 @@ function setFooterYear() {
 
 }
 
-getGithubRepos()
-setUpProjects()
-
-setFooterYear()
+    setFooterYear()
+    getGithubRepos()
+    setUpProjects()

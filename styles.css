@@ -19,14 +19,63 @@
     --bg-color: #181818;
     --forg-color: #282828;
     --border-color-01: #424242;
-    --txt-desc-color: #B3B3B3; ;
+    --txt-desc-color: #B3B3B3;
+    ;
     --b-radius-01: 10px;
     --b-radius-02: 30px;
     --txt-hover-color: #27E344;
     --transition-time: 0.3s;
     --transition-type: ease;
 }
+/* ==================POPUP===================== */
+.pop{
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.323);
+    backdrop-filter: blur(2px);
+}
+.popup {
+    
 
+    background-color: var(--border-color-01);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .popup h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: white;
+  }
+
+  .popup p {
+    font-size: 16px;
+    color: var(--txt-desc-color);
+    margin-bottom: 20px;
+  }
+
+  .popup a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+
+  .popup a:hover {
+    background-color: #0056b3;
+  }
 /* ================== UNIVERSAL====================== */
 body {
     background-color: var(--bg-color);
@@ -428,25 +477,25 @@ button {
     padding: 0rem 10rem;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 3rem;
     justify-content: center;
     align-items: center;
 }
 
 .project-card {
-    padding: 1.5rem 0rem 0rem 0rem;
+    padding: 1.5rem 1.5rem 0rem 0rem;
     border-radius: var(--b-radius-01);
     display: grid;
     grid-template-rows: max-content max-content;
     grid-template-columns: 50% 50%;
-    gap: 1.5rem;
+    gap: 3rem;
     background-color: var(--forg-color);
+
 
 
     &:hover {
         cursor: pointer;
-        box-shadow: 15px 15px 20px 0px rgba(0, 0, 0, 0.373),
-            -15px -15px 20px 0px rgba(0, 0, 0, 0.373);
+        box-shadow: 0px 0px 10px 5px var(--forg-color);
         transform: translateY(-5px);
     }
 }
@@ -457,6 +506,13 @@ button {
     justify-content: space-between;
     align-items: center;
     padding: 0px 3rem;
+
+}
+
+.project-card-header h4 {
+    font-weight: 400;
+    color: var(--txt-desc-color);
+    text-transform: uppercase;
 }
 
 .project-card-img {
@@ -479,12 +535,31 @@ button {
 }
 
 .project-card-info h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    font-weight: 500;
 }
 
 .project-card-info p {
     font-size: 0.8rem;
     color: var(--txt-desc-color);
+    padding: 0rem 6rem 1rem 0rem;
+}
+
+.project-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0px 3rem; */
+}
+
+.project-icons img {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0px 0.05rem;
+    border-radius: var(--b-radius-01);
+    background: var(--border-color-01);
+    padding: 0.1rem;
 }
 
 /* ================= BLOG SECTION ============== */
@@ -676,4 +751,36 @@ footer .support-info {
 
 .scroll-to-top {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ============== TOOLTIP ============== */
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Tooltip text */
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+/* Show the tooltip on hover */
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
 }
