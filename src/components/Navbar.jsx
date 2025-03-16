@@ -7,7 +7,7 @@ function Navbar() {
       <div>
         <img
           className="h-15 w-15"
-          src="src\assets\images\personal-img-art.webp"
+          src="\assets\images\personal-img-art.webp"
           alt="Anas Altaf Image as Logo"
         />
       </div>
