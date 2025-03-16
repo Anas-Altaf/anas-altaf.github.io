@@ -50,7 +50,7 @@ const projects = [
 ];
 
 const Projects = () => (
-  <div className="flex flex-col items-center space-y-6 p-10 mx-auto max-w-4xl">
+  <div className="flex flex-col items-center space-y-10 p-10 mx-auto max-w-4xl">
     {projects.map((project, idx) => (
       <ProjectCard key={idx} id={idx + 1} {...project} />
     ))}

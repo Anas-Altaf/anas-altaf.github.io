@@ -26,6 +26,10 @@
         cursor: pointer;
         font-weight: var(--font-weight-light);
     }
-   
+   *{
+    user-select: none; /* Prevent text selection */
+    -webkit-user-drag: none; /* Prevent dragging elements */
+   }
+
 }
  

@@ -11,8 +11,8 @@ function Navbar() {
           alt="Anas Altaf Image as Logo"
         />
       </div>
-      <div className="hidden md:block fixed top-5 left-1/2 transform -translate-x-1/2 z-45">
-        <ul className="flex flex-row justify-center items-center space-x-5 rounded-xl bg-bg-p px-6 py-2 cursor-pointer">
+      <div className="hidden md:block fixed top-5 left-1/2 transform -translate-x-1/2 z-45 ">
+        <ul className="flex flex-row justify-center items-center space-x-5 rounded-full bg-bg-p px-6 py-2 cursor-pointer border-1 border-fg-s ">
           {navItems.map((item, index) => (
             <li
               key={index}
