@@ -26,7 +26,7 @@ const Socials = () => {
     },
   ];
   return (
-    <div className="flex flex-row justify-between  items-center gap-10 mt-2  backdrop:blur-xl bg-black/40 px-7.5 py-3 rounded-xl border-1 border-fg-s border-opacity-50">
+    <div className="flex flex-row justify-between  items-center gap-10 mt-3  backdrop:blur-xl bg-black/40 px-7.5 py-3 rounded-xl border-1 border-fg-s border-opacity-50">
       {socialHandles.map((handle, index) => (
         <SocialHandle key={index} iconName={handle.iconName} link={handle.link} />
       ))}

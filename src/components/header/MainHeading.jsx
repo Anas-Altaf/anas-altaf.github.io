@@ -1,11 +1,11 @@
 import React from "react";
 
-const MainHeading = ({ id, title, description }) => {
+const MainHeading = ({ id, title, description,ref }) => {
   let titleLastWord = title.split(" ").slice(-1);
   // text before last word
   let titleFirstWords = title.split(" ").slice(0, -1).join(" ");
   return (
-    <div className="pt-10 pb-5">
+    <div className="pt-10 pb-5" ref={ref}>
       <h2 className="text-2xl text-center">
         <span className="relative -top-1.5 -left-2 bottom-auto right-auto text-[0.8rem] font-light">
           {id}

@@ -1,6 +1,6 @@
 import React from "react";
-import ActionButton from "../ActionButton";
-import MainHeading from "../MainHeading";
+import ActionButton from "../buttons/ActionButton";
+import MainHeading from "../header/MainHeading";
 import BlogTitle from "./BlogTitle";
 
 const BlogImageCard = ({ blog }) => {

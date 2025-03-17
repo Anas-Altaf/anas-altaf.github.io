@@ -9,7 +9,6 @@ const projects = [
     images: [
       "/assets/images/blog/blog-1.webp",
       "/assets/images/blog/blog-1.webp",
-      "/assets/images/blog/blog-1.webp",
     ],
     icons: ["python", "jupyter", "pandas", "streamlit", "git", "pycharm"],
     category: "Data Science in AI and ML",
@@ -24,7 +23,6 @@ const projects = [
     images: [
       "/assets/images/blog/blog-1.webp",
       "/assets/images/blog/blog-1.webp",
-      "/assets/images/blog/blog-1.webp",
     ],
     icons: ["python", "jupyter", "pandas", "streamlit", "git", "pycharm"],
     category: "Data Science in AI and ML",
@@ -37,7 +35,6 @@ const projects = [
     desc: "A robust scrapper for https://nips.papers.cc , it could be helpful if you are a researcher and data scientist or you need to train your LLMs",
     img: "/assets/images/blog/blog-1.webp",
     images: [
-      "/assets/images/blog/blog-1.webp",
       "/assets/images/blog/blog-1.webp",
       "/assets/images/blog/blog-1.webp",
     ],

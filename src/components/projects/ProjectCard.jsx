@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import ActionButton from "../ActionButton";
+import ActionButton from "../buttons/ActionButton";
 
 const ProjectCard = ({
   id,
